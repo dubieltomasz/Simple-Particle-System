@@ -150,10 +150,10 @@
     <value>9, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1062, 721</value>
+    <value>938, 664</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1084, 777</value>
+    <value>960, 720</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>

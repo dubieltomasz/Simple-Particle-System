@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple-Particle-System", "Simple-Particle-System\Simple-Particle-System.csproj", "{02836222-245E-4312-8A16-B807B611D87A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02836222-245E-4312-8A16-B807B611D87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02836222-245E-4312-8A16-B807B611D87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02836222-245E-4312-8A16-B807B611D87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02836222-245E-4312-8A16-B807B611D87A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CF0D926-1D7C-45B8-AAC5-4BF2013C71DF}
+	EndGlobalSection
+EndGlobal

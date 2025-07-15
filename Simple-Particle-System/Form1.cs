@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Simple_Particle_System
 {
@@ -30,8 +31,12 @@ namespace Simple_Particle_System
 
         private void panel_MouseClick(object sender, MouseEventArgs e)
         {
-            Random rnd = new Random();
-            particles.Add(new Particle(e.Location.X, e.Location.Y, 20.0f, 1.0f, 0.0f, 0.0f, 1.0f));
+            Random rand = new Random();
+            float d = (float)(20 + (50-20) * rand.NextDouble());
+            float vx = (float)(-1 + (1+1) * rand.NextDouble());
+            float vy = (float)(-1 + (1+1) * rand.NextDouble());
+
+            particles.Add(new Particle(e.Location.X, e.Location.Y, d, vx, vy, 0.0f, 0.5f));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -42,31 +47,9 @@ namespace Simple_Particle_System
             {
                 buffer.FillEllipse(Brushes.Red, particle.posX - particle.d/2, particle.posY - particle.d/2, particle.d, particle.d);
                 buffer.DrawEllipse(Pens.Black, particle.posX - particle.d/2, particle.posY - particle.d/2, particle.d, particle.d);
+                
+                particle.calculateCollisions(panel.Height, panel.Width, particles);
                 particle.calculateNextPosition();
-
-                if (particle.posX + particle.d / 2 > panel.Width)
-                {
-                    particle.posX = panel.Width - particle.d / 2;
-                    particle.velocityX *= -0.75f;
-                }
-
-                if (particle.posX - particle.d / 2 < 0)
-                {
-                    particle.posX = particle.d / 2;
-                    particle.velocityX *= -0.75f;
-                }
-
-                if (particle.posY + particle.d / 2 > panel.Height)
-                {
-                    particle.posY = panel.Height - particle.d / 2;
-                    particle.velocityY *= -0.75f;
-                }
-
-                if (particle.posY - particle.d / 2 < 0)
-                {
-                    particle.posY = particle.d / 2;
-                    particle.velocityY *= -0.75f;
-                }
             }
 
             g.DrawImage(bmp, 0, 0);

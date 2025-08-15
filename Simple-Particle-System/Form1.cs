@@ -15,7 +15,7 @@ namespace Simple_Particle_System
     {
         List<Particle> particles = new List<Particle>();
         Bitmap bmp;
-        Graphics g, buffer;
+        Graphics g, buffer, banana;
 
         public Form1()
         {
@@ -47,9 +47,9 @@ namespace Simple_Particle_System
             {
                 buffer.FillEllipse(Brushes.Red, particle.posX - particle.d/2, particle.posY - particle.d/2, particle.d, particle.d);
                 buffer.DrawEllipse(Pens.Black, particle.posX - particle.d/2, particle.posY - particle.d/2, particle.d, particle.d);
-                
-                particle.calculateCollisions(panel.Height, panel.Width, particles);
+
                 particle.calculateNextPosition();
+                particle.calculateCollisions(panel.Height, panel.Width, particles);
             }
 
             g.DrawImage(bmp, 0, 0);
